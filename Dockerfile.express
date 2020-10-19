@@ -7,4 +7,7 @@ RUN /usr/local/bin/npm install -g fs path express
 
 EXPOSE 4200
 
-CMD ["sh", "-c", "/usr/local/bin/node http-server.js"]
+ENV HTTP_SERVER_FILE="http-server.js"
+ENV CI_PROJECT_DIR="/app"
+
+CMD ["sh", "-c", "/usr/local/bin/node ${CI_PROJECT_DIR}/${HTTP_SERVER_FILE}"]
