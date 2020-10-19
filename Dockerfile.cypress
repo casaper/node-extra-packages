@@ -26,6 +26,7 @@ RUN apt update \
   && cd /cypress_tmp \
   && npm i -D cypress@"${cypress_version}" \
   && rm -Rf node_modules package-lock.json \
+  && npm install -g express fs path \
   && apt-get autoremove -yqq \
   && apt-get autoclean -yqq \
   && rm -rf /var/lib/apt/lists/*
