@@ -4,7 +4,7 @@ ARG cypress_version=5.4.0
 
 LABEL author="casaper (github.com/casaper)"
 
-ENV CYPRESS_CACHE_FOLDER="/cache"
+ENV CYPRESS_CACHE_FOLDER="/cache/Cypress"
 
 ADD ./cypress /cypress_tmp
 
