@@ -1,0 +1,26 @@
+FROM casaper/node-extra-packages:lts-rsync
+
+LABEL author="casaper (github.com/casaper)"
+
+RUN apt update && apt -qqy --no-install-recommends install \
+    apt-transport-https \
+    ca-certificates \
+    gnupg \
+    curl \
+    fontconfig \
+  && curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
+  && echo 'deb https://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list \
+  && apt update \
+  && apt -qqy --no-install-recommends install google-chrome-stable \
+  # install matching chromedriver version
+  && export CHR_VER=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1) \
+  && export DRV_VER=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHR_VER}") \
+  && echo "https://chromedriver.storage.googleapis.com/${DRV_VER}/chromedriver_linux64.zip" \
+  && curl -s "https://chromedriver.storage.googleapis.com/${DRV_VER}/chromedriver_linux64.zip" > /tmp/chromedriver.zip  \
+  && unzip -p /tmp/chromedriver.zip > /usr/local/bin/chromedriver \
+  && chmod +x /usr/local/bin/chromedriver \
+  # cleanup caches
+  && rm /tmp/*.zip \
+  && apt autoremove -yqq \
+  && apt autoclean -yqq  \
+  && rm -rf /var/lib/apt/lists/*
