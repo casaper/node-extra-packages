@@ -1,13 +1,17 @@
-FROM node:erbium
+ARG from_tag="erbium"
+FROM node:${from_tag}
 
 LABEL author="casaper (github.com/casaper)"
-LABEL name="express server"
+LABEL description="Node LTS Erbium with preinstalled express fs path for running server.js"
 
 ARG working_dir="/app"
 ARG default_server="/app/http-server.js"
 
-RUN /usr/local/bin/npm install -g fs path express \
-  && mkdir -p "$working_dir"
+RUN npm install -g fs path express \
+  && mkdir -p "$working_dir" \
+  && chmod a+rw "$working_dir" \
+  # cleanup
+  && npm cache clean --force
 
 WORKDIR ${working_dir}
 

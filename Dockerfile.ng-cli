@@ -1,4 +1,5 @@
-FROM casaper/node-extra-packages:chrome
+ARG from_tag="chrome"
+FROM casaper/node-extra-packages:${from_tag}
 
 ARG USER_HOME_DIR="/tmp"
 ARG APP_DIR="/app"

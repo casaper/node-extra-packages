@@ -1,15 +1,17 @@
-FROM casaper/node-extra-packages:chrome
+ARG from_tag="chrome"
+FROM casaper/node-extra-packages:${from_tag}
 
 ARG cypress_version=5.4.0
 
+LABEL description="Node LTS Erbium with google chrome and cypress installed"
 LABEL author="casaper (github.com/casaper)"
 
 ENV CYPRESS_CACHE_FOLDER="/cy-cache/Cypress"
 
 ADD ./cypress /cypress_tmp
 
-RUN apt update \
-  && apt install -yqq --no-install-recommends \
+RUN apt-get update \
+  && apt-get install -yqq --no-install-recommends \
     libgtk2.0-0 \
     libgtk-3-0 \
     libgbm-dev \
@@ -25,8 +27,10 @@ RUN apt update \
   && chmod a+w "${CYPRESS_CACHE_FOLDER}" \
   && cd /cypress_tmp \
   && npm i -D cypress@"${cypress_version}" \
-  && rm -Rf node_modules package-lock.json \
   && npm install -g express fs path \
+  # cleanup
+  && npm cache clean --force \
+  && rm -Rf /cypress_tmp \
   && apt-get autoremove -yqq \
   && apt-get autoclean -yqq \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
