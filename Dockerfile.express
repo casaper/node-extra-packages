@@ -1,13 +1,18 @@
 FROM node:erbium
 
 LABEL author="casaper (github.com/casaper)"
-LABEL name="dist serve"
+LABEL name="express server"
 
-RUN /usr/local/bin/npm install -g fs path express
+ARG working_dir="/app"
+ARG default_server="/app/http-server.js"
 
-EXPOSE 4200
+RUN /usr/local/bin/npm install -g fs path express \
+  && mkdir -p "$working_dir"
 
-ENV HTTP_SERVER_FILE="http-server.js"
-ENV CI_PROJECT_DIR="/app"
+WORKDIR ${working_dir}
 
-CMD ["sh", "-c", "/usr/local/bin/node ${CI_PROJECT_DIR}/${HTTP_SERVER_FILE}"]
+EXPOSE 4000-4999
+
+ENV EXPRESS_SERVER_JS="$default_server"
+
+CMD ["sh", "-c", "/usr/local/bin/node \"${EXPRESS_SERVER_JS}\""]
