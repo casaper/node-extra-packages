@@ -23,4 +23,4 @@ RUN apt update && apt -qqy --no-install-recommends install \
   && rm /tmp/*.zip \
   && apt autoremove -yqq \
   && apt autoclean -yqq  \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

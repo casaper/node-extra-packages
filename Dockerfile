@@ -8,4 +8,4 @@ RUN apt update \
   && apt install -yqq --no-install-recommends rsync \
   && apt-get autoremove -yqq \
   && apt-get autoclean -yqq \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
