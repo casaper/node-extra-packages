@@ -26,6 +26,7 @@ RUN apt-get update \
         procps \
         rsync \
         zip \
+        python3 \
         unzip $(echo "$extra_packages" | tr ';' "\n") \
   && set -xe \
   && mkdir -p "$app_directory" \
