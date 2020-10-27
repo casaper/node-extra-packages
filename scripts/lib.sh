@@ -14,6 +14,7 @@ WHITE='\033[1;37m'
 BOLD='\033[1m'
 SET='\033[0m'
 
+
 function num_of_chars() {
   echo -e -n "$1" | wc -c
 }

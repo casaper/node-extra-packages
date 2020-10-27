@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./lib.sh
+. ./scripts/lib.sh
 
 while test $# -gt 0; do
   case "$1" in
@@ -61,7 +61,6 @@ if [ -n "$FROM_TAG" ]; then
 fi
 
 echo $BUILD_ARG_FROM_TAG
-
 
 docker build -f "${DOCKER_FILE}"${BUILD_ARG_FROM_TAG} -t "${IMAGE_TAG}" $@ .
 
