@@ -51,7 +51,7 @@ REPO_NAME="casaper/node-extra-packages"
 MAIN_TAG="${REPO_NAME}:${TAG}"
 
 if [ -n "$FROM_TAG" ]; then
-  BUILD_ARG_FROM_TAG=" --build-arg=from_tag='${FROM_TAG}' "
+  BUILD_ARG_FROM_TAG=" --build-arg 'from_tag=${FROM_TAG}' "
 fi
 
 echo $'\nparameters:'
@@ -65,7 +65,7 @@ echo "FROM_TAG: ${FROM_TAG}"
 echo "PUSH_AFTER_BUILD: ${PUSH_AFTER_BUILD}"$'\n\n'
 
 
-echo "docker build -f \"${DOCKER_FILE}\"${BUILD_ARG_FROM_TAG} -t \"${MAIN_TAG}\" $@ ."
+# echo "docker build -f \"${DOCKER_FILE}\"${BUILD_ARG_FROM_TAG} -t \"${MAIN_TAG}\" $@ ."
 docker build -f "${DOCKER_FILE}"${BUILD_ARG_FROM_TAG} -t "${MAIN_TAG}" $@ .
 PRODUCED_TAGS="${MAIN_TAG}"
 
