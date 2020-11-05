@@ -1,31 +1,42 @@
-ARG from_tag="erbium-ng"
+ARG from_tag="fermium-ng"
 FROM casaper/node-extra-packages:${from_tag}
 
 ARG chrome_branch="stable"
 # define extra debian packages to install separated by `;`
 ARG extra_packages
 
-LABEL description="Node LTS Erbium slim with google chrome stable and matching chromedriver"
+LABEL description="Node LTS Fermium slim with google chrome stable and matching chromedriver"
 LABEL author="casaper (github.com/casaper)"
 
-RUN apt-get update  \
+RUN apt-get update \
   && apt-get install -yq --no-install-recommends \
-      apt-transport-https \
-      gnupg \
-      fontconfig  $(echo "$extra_packages" | tr ';' "\n") \
+              apt-transport-https \
+              gnupg \
+              fontconfig  \
+              $(echo "$extra_packages" | tr ';' "\n") \
   # install google chrome
   && curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
-  && echo "deb https://dl.google.com/linux/chrome/deb/ ${chrome_branch} main" > /etc/apt/sources.list.d/google-chrome.list \
+  && echo \
+        "deb https://dl.google.com/linux/chrome/deb/ ${chrome_branch} main" > \
+          /etc/apt/sources.list.d/google-chrome.list \
   && apt-get update \
-  && apt-get -qqy --no-install-recommends install google-chrome-stable \
+  && apt-get -qqy --no-install-recommends install \
+              google-chrome-stable \
   # install matching chromedriver version
   && export DRIVER_URL="https://chromedriver.storage.googleapis.com" \
   && export CHROME_VERS=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1) \
   && export DRIVER_VERS=$(curl -s "${DRIVER_URL}/LATEST_RELEASE_${CHROME_VERS}") \
-  && curl -s "${DRIVER_URL}/${DRIVER_VERS}/chromedriver_linux64.zip" > /tmp/chromedriver.zip  \
-  && unzip -p /tmp/chromedriver.zip > /usr/local/bin/chromedriver \
+  && curl -s \
+      "${DRIVER_URL}/${DRIVER_VERS}/chromedriver_linux64.zip" > \
+        /tmp/chromedriver.zip  \
+  && unzip -p \
+        /tmp/chromedriver.zip > \
+          /usr/local/bin/chromedriver \
   && chmod +x /usr/local/bin/chromedriver \
   # cleanup caches
   && apt-get autoremove -yqq \
   && apt-get autoclean -yqq  \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && rm -rf \
+        /var/lib/apt/lists/* \
+        /tmp/* \
+        /var/tmp/*

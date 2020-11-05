@@ -1,4 +1,4 @@
-ARG from_tag="erbium-slim"
+ARG from_tag="fermium-slim"
 FROM node:${from_tag}
 
 # define extra debian packages to install separated by `;`
@@ -6,7 +6,7 @@ ARG extra_packages
 
 ARG app_directory="/app"
 
-LABEL description="Node LTS Erbium base image with dependencies for installing several deb dependencies"
+LABEL description="Node LTS Fermium base image with dependencies for installing several deb dependencies"
 LABEL author="casaper" extra_packages=$extra_packages
 
 ENV NPM_CONFIG_LOGLEVEL=warn NG_CLI_ANALYTICS=false
@@ -34,10 +34,10 @@ RUN apt-get update \
   && chown node:node "$app_directory" \
   && chmod a+rw "$app_directory" \
   && chown -R node:node \
-        /usr/local/lib \
-        /usr/local/include \
-        /usr/local/share \
-        /usr/local/bin \
+                /usr/local/lib \
+                /usr/local/include \
+                /usr/local/share \
+                /usr/local/bin \
   # cleanup caches
   && apt-get autoremove -yq \
   && apt-get autoclean -yq  \

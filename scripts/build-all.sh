@@ -5,62 +5,73 @@
 
 # base image
 ./scripts/build-image.sh \
-  --df=erbium \
-  --push
+  --from='fermium-slim' \
+  --push \
+  --tag='fermium'
 
-# base image angular
+./scripts/build-image.sh \
+  --df=chrome \
+  --from='fermium'
+  --tag='fermium-chrome' \
+  --push \
+  --suffix='86 latest' \
+
+
+./scripts/build-image.sh \
+  --df=cypress \
+  --from='fermium' \
+  --tag='fermium-cypress' \
+  --suffix='latest 5.5.0' \
+  --push \
+  --build-arg=cypress_version='5.5.0'
+
+./scripts/build-image.sh \
+  --df=cypress \
+  --from='fermium-chrome' \
+  --tag='fermium-chrome-cypress' \
+  --suffix='latest 5.5.0' \
+  --push \
+  --build-arg=cypress_version='5.5.0'
+
+## angular 10.1.1
+#
 ./scripts/build-image.sh \
   --df=ng \
-  --tag=erbium-ng \
-  --alias='10.1.1' \
+  --from='fermium' \
+  --tag=fermium-ng-10.1.1 \
   --push \
-  --build-arg 'from_tag=erbium'
+  --build-arg=angular_cli_version='10.1.1'
 
 ./scripts/build-image.sh \
-  --df=chrome \
-  --tag='erbium-chrome' \
-  --alias='86 latest' \
+  --df=ng \
+  --from='fermium-chrome' \
   --push \
-  --build-arg 'from_tag=erbium'
+  --tag='fermium-chrome-ng-10.1.1'
+
+## angular 10.2.2
+#
+./scripts/build-image.sh \
+  --df=ng \
+  --from='fermium' \
+  --tag=fermium-ng \
+  --suffix='10.2.2 latest' \
+  --push \
+  --build-arg=angular_cli_version='10.2.2'
 
 ./scripts/build-image.sh \
-  --df=chrome \
-  --tag='erbium-ng-chrome' \
-  --alias='86 latest' \
-  --push \
-  --build-arg 'from_tag=erbium-ng'
+  --df=ng \
+  --from='fermium-chrome' \
+  --tag=fermium-chrome-ng \
+  --suffix='10.2.2 latest' \
+  --build-arg=angular_cli_version='10.2.2'
 
 ./scripts/build-image.sh \
-  --df=cypress \
-  --tag='erbium-cypress' \
-  --alias='latest 5.5.0' \
+  --df=ng \
+  --from='fermium-cypress' \
+  --tag=fermium-cypress-ng \
+  --suffix='10.2.2 latest' \
   --push \
-  --build-arg 'cypress_version=5.5.0' \
-  --build-arg 'from_tag=erbium'
-
-./scripts/build-image.sh \
-  --df=cypress \
-  --tag='erbium-chrome-cypress' \
-  --alias='latest 5.5.0' \
-  --push \
-  --build-arg 'cypress_version=5.5.0' \
-  --build-arg 'from_tag=erbium-chrome'
-
-./scripts/build-image.sh \
-  --df=cypress \
-  --tag='erbium-ng-cypress' \
-  --alias='latest 5.5.0' \
-  --push \
-  --build-arg 'cypress_version=5.5.0' \
-  --build-arg 'from_tag=erbium-ng'
-
-./scripts/build-image.sh \
-  --df=cypress \
-  --tag='erbium-ng-chrome-cypress' \
-  --alias='latest 5.5.0' \
-  --push \
-  --build-arg 'cypress_version=5.5.0' \
-  --build-arg 'from_tag=erbium-ng-chrome'
+  --build-arg=angular_cli_version='10.2.2'
 
 echo $'# node-extra-packages\n' > README.md
 echo $'## Docker tags availables\n' >> README.md

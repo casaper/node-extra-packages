@@ -1,20 +1,31 @@
-ARG from_tag="erbium-slim"
+ARG from_tag="fermium-slim"
 FROM node:${from_tag}
 
 LABEL author="casaper (github.com/casaper)"
-LABEL description="Node LTS Erbium with preinstalled express fs path for running server.js"
+LABEL description="Node LTS Fermium with preinstalled express fs path for running server.js"
 
 ARG working_dir="/app"
 ARG default_server="/app/http-server.js"
 
 RUN set -xe \
-  && npm i --unsafe-perm=true --allow-root -g fs path express \
-  && chown -R node:node /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin \
-  && ( \
-      cd /home/node \
-      su node -c "npm i --unsafe-perm=true --allow-root -g fs path express; " \
-                 "npm cache clean --force" \
-    ) \
+  && npm i \
+      --unsafe-perm=true \
+      --allow-root \
+      -g \
+          fs \
+          path \
+          express \
+  && chown -R node:node \
+          /usr/local/lib \
+          /usr/local/include \
+          /usr/local/share \
+          /usr/local/bin \
+  &&  ( \
+        cd /home/node \
+        su node -c \
+            "npm i --unsafe-perm=true --allow-root -g fs path express; " \
+            "npm cache clean --force" \
+      ) \
   && mkdir -p "$working_dir" \
   && chmod a+rw "$working_dir" \
   # cleanup

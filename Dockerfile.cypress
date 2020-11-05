@@ -1,4 +1,4 @@
-ARG from_tag="erbium-ng-chrome"
+ARG from_tag="fermium-ng-chrome"
 FROM casaper/node-extra-packages:${from_tag}
 
 # define extra debian packages to install separated by `;`
@@ -10,21 +10,23 @@ ARG cypress_cache_dir="/cy-cache/Cypress"
 
 ENV CYPRESS_CACHE_FOLDER="${cypress_cache_dir}"
 
-LABEL description="Node LTS Erbium slim with google chrome and cypress installed"
+LABEL description="Node LTS Fermium slim with google chrome and cypress installed"
 LABEL author="casaper (github.com/casaper)"
 
-RUN apt-get update && apt-get install -yqq --no-install-recommends \
-    libgtk2.0-0 \
-    libgtk-3-0 \
-    libgbm-dev \
-    libnotify-dev \
-    libgconf-2-4 \
-    libnss3 \
-    libxss1 \
-    libasound2 \
-    libxtst6 \
-    xauth \
-    xvfb  $(echo "$extra_packages" | tr ';' "\n") \
+RUN apt-get update \
+  && apt-get install -yqq --no-install-recommends \
+              libgtk2.0-0 \
+              libgtk-3-0 \
+              libgbm-dev \
+              libnotify-dev \
+              libgconf-2-4 \
+              libnss3 \
+              libxss1 \
+              libasound2 \
+              libxtst6 \
+              xauth \
+              xvfb  \
+              $(echo "$extra_packages" | tr ';' "\n") \
   && set -xe \
   # install cypress globally
   && mkdir -p "${CYPRESS_CACHE_FOLDER}" \
@@ -33,11 +35,12 @@ RUN apt-get update && apt-get install -yqq --no-install-recommends \
   # install cypress
   && npm i --unsafe-perm=true --allow-root -g "cypress@${cypress_version}"  \
   && chown -R node:node /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin \
-  && ( \
-      cd /home/node \
-      su node -c "npm i --unsafe-perm=true --allow-root -g cypress@${cypress_version}; " \
-                 "npm cache clean --force" \
-    ) \
+  &&  ( \
+        cd /home/node \
+        su node -c \
+          "npm i --unsafe-perm=true --allow-root -g cypress@${cypress_version}; " \
+          "npm cache clean --force" \
+      ) \
   # cleanup
   && npm cache clean --force \
   && apt-get autoremove -yqq \

@@ -1,22 +1,27 @@
-ARG from_tag="erbium"
+ARG from_tag="fermium"
 FROM casaper/node-extra-packages:${from_tag}
 
 ARG angular_cli_version="10.1.1"
 
-LABEL description="Node LTS Erbium base image with dependencies for installing several deb dependencies"
+LABEL description="Node LTS fermium base image with dependencies for installing several deb dependencies"
 LABEL author="casaper"
 LABEL angular-cli=$angular_cli_version node=$NODE_VERSION
 
 RUN set -xe \
   && npm i --unsafe-perm=true --allow-root -g \
-        fs \
-        path \
-        express \
-        "@angular/cli@${angular_cli_version}" \
-  && chown -R node:node /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin \
-  && ( \
-    cd /home/node \
-    su node -c "npm i --unsafe-perm=true -g " \
-      "@angular/cli@${angular_cli_version} fs path express; " \
-    "npm cache clean --force" \
-  )
+          fs \
+          path \
+          express \
+          "@angular/cli@${angular_cli_version}" \
+  && chown -R node:node \
+        /usr/local/lib \
+        /usr/local/include \
+        /usr/local/share \
+        /usr/local/bin \
+  &&  ( \
+        cd /home/node \
+        su node -c \
+            "npm i --unsafe-perm=true -g " \
+                  "@angular/cli@${angular_cli_version} fs path express; " \
+            "npm cache clean --force" \
+      )
