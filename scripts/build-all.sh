@@ -55,27 +55,27 @@ done
   --build-arg 'angular_cli_version=10.1.1' \
   --build-arg 'from_tag=fermium-chrome'
 
-## angular 10.2.2
+## angular 10.2.0
 #
 ./scripts/build-image.sh ${PUSH_AFTER_BUILD} \
   --df=ng \
   --tag=fermium-ng \
-  --suffix='10.2.2 latest' \
-  --build-arg 'angular_cli_version=10.2.2' \
+  --suffix='10.2.0 latest' \
+  --build-arg 'angular_cli_version=10.2.0' \
   --build-arg 'from_tag=fermium'
 
 ./scripts/build-image.sh ${PUSH_AFTER_BUILD} \
   --df=ng \
   --tag=fermium-chrome-ng \
-  --suffix='10.2.2 latest' \
-  --build-arg 'angular_cli_version=10.2.2' \
+  --suffix='10.2.0 latest' \
+  --build-arg 'angular_cli_version=10.2.0' \
   --build-arg 'from_tag=fermium-chrome'
 
 ./scripts/build-image.sh ${PUSH_AFTER_BUILD} \
   --df=ng \
   --tag=fermium-cypress-ng \
-  --suffix='10.2.2 latest' \
-  --build-arg 'angular_cli_version=10.2.2' \
+  --suffix='10.2.0 latest' \
+  --build-arg 'angular_cli_version=10.2.0' \
   --build-arg 'from_tag=fermium-cypress'
 
 echo $'# node-extra-packages\n' > README.md
