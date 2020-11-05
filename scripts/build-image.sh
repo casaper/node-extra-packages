@@ -25,10 +25,6 @@ while test $# -gt 0; do
     DOCKER_F="${1//--df=/}"
     shift
     ;;
-  --from=*)
-    FROM_TAG="${1//--from=/}"
-    shift
-    ;;
   --push)
     PUSH_AFTER_BUILD="true"
     shift
@@ -50,10 +46,6 @@ fi
 REPO_NAME="casaper/node-extra-packages"
 MAIN_TAG="${REPO_NAME}:${TAG}"
 
-if [ -n "$FROM_TAG" ]; then
-  BUILD_ARG_FROM_TAG=" --build-arg 'from_tag=${FROM_TAG}' "
-fi
-
 echo $'\nparameters:'
 echo "TAG: ${TAG}"
 echo "MAIN_TAG: ${MAIN_TAG}"
@@ -66,7 +58,7 @@ echo "PUSH_AFTER_BUILD: ${PUSH_AFTER_BUILD}"$'\n\n'
 
 
 # echo "docker build -f \"${DOCKER_FILE}\"${BUILD_ARG_FROM_TAG} -t \"${MAIN_TAG}\" $@ ."
-docker build -f "${DOCKER_FILE}"${BUILD_ARG_FROM_TAG} -t "${MAIN_TAG}" $@ .
+docker build -f "${DOCKER_FILE}" -t "${MAIN_TAG}" $@ .
 PRODUCED_TAGS="${MAIN_TAG}"
 
 function make_alias_tag() {
