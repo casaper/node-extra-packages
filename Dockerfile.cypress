@@ -38,7 +38,7 @@ RUN apt-get update \
   &&  ( \
         cd /home/node \
         su node -c \
-          "npm i --unsafe-perm=true --allow-root -g cypress@${cypress_version}; " \
+          "npm i --unsafe-perm=true --allow-root -g moment cypress@${cypress_version}; " \
           "npm cache clean --force" \
       ) \
   # cleanup

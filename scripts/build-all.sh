@@ -40,12 +40,16 @@ done
 
 ./scripts/build-image.sh --push \
   --df=cypress \
-  --tag='fermium-cypress' \
-  --suffix='latest 5.5.0' \
+  --tag='fermium-cypress-5.5.0' \
   --build-arg 'cypress_version=5.5.0' \
   --build-arg 'from_tag=fermium'
 
-
+./scripts/build-image.sh --push \
+  --df=cypress \
+  --tag='fermium-cypress' \
+  --suffix='latest 5.6.0' \
+  --build-arg 'cypress_version=5.6.0' \
+  --build-arg 'from_tag=fermium'
 
 # ./scripts/build-image.sh --push \
 #   --df=cypress \
