@@ -64,6 +64,18 @@ function convert_sha() {
   sed 's/sha256:/sha256-/g' <<< "$1"
 }
 
+function img_link() {
+  REFERENCE="${1}"
+  TAG_ID=$(docker image ls ${REFERENCE} --format "table {{.Tag}};{{.ID}}" | tail -n +2)
+  TAG=$(cut -d ';' -f 1 <<< "$TAG_ID")
+  ID=$(cut -d ';' -f 2 <<< "$TAG_ID")
+  REPO_DIGESTS=$(docker image inspect "$ID" --format '{{.RepoDigests}}' | cut -d '[' -f 2 | cut -d ']' -f 1)
+  REPO_DIGEST=$(echo "$REPO_DIGESTS" | cut -d ' ' -f 1)
+  DIGEST_SHA=$(echo "$REPO_DIGEST" | cut -d ':' -f 2)
+  IMG_URL="https://hub.docker.com/layers/${REPO_NAME}/${TAG}/images/sha256-${DIGEST_SHA}?context=explore"
+  echo "- [${REPO_NAME}:${TAG}](${IMG_URL})"
+}
+
 function all_links() {
   DOK_FORMAT='table {{.Tag}};{{.ID}}'
   MD_LIST=''

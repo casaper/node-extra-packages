@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 . ./scripts/lib.sh
+. ./scripts/dock-functions.sh
 
 
 while test $# -gt 0; do
@@ -29,6 +30,10 @@ while test $# -gt 0; do
     PUSH_AFTER_BUILD="true"
     shift
     ;;
+  --readme)
+    APPEND_README="true"
+    shift
+    ;;
   *)
     break
     ;;
@@ -54,7 +59,8 @@ echo "FULL_ALIASES: ${FULL_ALIASES}"
 echo "DOCKER_F: ${DOCKER_F}"
 echo "DOCKER_F: ${DOCKER_F}"
 echo "FROM_TAG: ${FROM_TAG}"
-echo "PUSH_AFTER_BUILD: ${PUSH_AFTER_BUILD}"$'\n\n'
+echo "PUSH_AFTER_BUILD: ${PUSH_AFTER_BUILD}"
+echo "APPEND_README: ${APPEND_README}"$'\n\n'
 
 
 # echo "docker build -f \"${DOCKER_FILE}\"${BUILD_ARG_FROM_TAG} -t \"${MAIN_TAG}\" $@ ."
@@ -80,11 +86,18 @@ if [ -n "$FULL_ALIASES" ]; then
   done
 fi
 
-if [ "$PUSH_AFTER_BUILD" = 'true' ]; then
-  for alias_tag in ${PRODUCED_TAGS}; do
+if [ "$APPEND_README" = 'true' ]; then
+  echo $'\n\n\n' >> README.md
+fi
+
+for alias_tag in ${PRODUCED_TAGS}; do
+  if [ "$PUSH_AFTER_BUILD" = 'true' ]; then
     echo $'\n===============\n'"Pushing ${alias_tag} to DockerHub"$'\n===============\n'
     docker push "${alias_tag}"
-  done
-else
-  echo $'\n\n===============\n'"Built these docker tags:"$'\n'"${PRODUCED_TAGS}"$'\n===============\n'
-fi
+  fi
+  if [ "$APPEND_README" = 'true' ]; then
+    img_link "${alias_tag}" >> README.md
+  fi
+done
+
+echo $'\n\n===============\n'"Built these docker tags:"$'\n'"${PRODUCED_TAGS}"$'\n===============\n'
