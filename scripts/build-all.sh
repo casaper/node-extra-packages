@@ -73,6 +73,32 @@ done
 #   --build-arg 'angular_cli_version=10.1.1' \
 #   --build-arg 'from_tag=erbium-chrome'
 
+
+## Angular 11.0.2
+#
+./scripts/build-image.sh --push \
+  --df=ng \
+  --tag=fermium-ng  \
+  --suffix='11.0.2 latest' \
+  --build-arg 'angular_cli_version=11.0.2' \
+  --build-arg 'from_tag=fermium'
+
+./scripts/build-image.sh --push \
+  --df=ng \
+  --tag='fermium-chrome-ng' \
+  --suffix='11.0.2 latest' \
+  --build-arg 'angular_cli_version=11.0.2' \
+  --build-arg 'from_tag=fermium-chrome'
+
+./scripts/build-image.sh --push \
+  --df=ng \
+  --tag=fermium-cypress-ng \
+  --suffix='11.0.2 latest' \
+  --build-arg 'angular_cli_version=11.0.2' \
+  --build-arg 'from_tag=fermium-cypress'
+
+## Angular 10.1.1
+#
 ./scripts/build-image.sh --push \
   --df=ng \
   --tag=fermium-ng-10.1.1  \
