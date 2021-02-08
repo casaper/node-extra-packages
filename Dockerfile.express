@@ -1,4 +1,4 @@
-ARG from_tag="fermium"
+ARG from_tag="fermium-slim"
 FROM node:${from_tag}
 
 LABEL author="casaper (github.com/casaper)"
