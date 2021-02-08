@@ -33,7 +33,7 @@ RUN set -xe \
 
 WORKDIR ${working_dir}
 
-EXPOSE 4000-4999
+EXPOSE 4200
 
 ENV EXPRESS_SERVER_JS="$default_server"
 
