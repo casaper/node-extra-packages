@@ -9,6 +9,7 @@
   * [Cypress installed](#cypress-installed)
   * [Cyperess and Angular CLI](#cyperess-and-angular-cli)
 * [Erbium (Node 12.x)](#erbium-node-12x)
+* [Release CLI](#release-cli)
 
 ## Tags
 
@@ -75,3 +76,7 @@
 - [casaper/node-extra-packages:erbium-ng-chrome-latest](https://hub.docker.com/layers/casaper/node-extra-packages/erbium-ng-chrome-latest/images/sha256-d3644ddb01407d427082fd690f6761f76b19e0bbe321e42f2738bd57f596cb39?context=explore)
 - [casaper/node-extra-packages:erbium-ng-chrome](https://hub.docker.com/layers/casaper/node-extra-packages/erbium-ng-chrome/images/sha256-f63def1dbc71441e6b5e846012487f6443242e604b6330c61a0c3545669c602b?context=explore)
 
+### Release CLI
+
+- [casaper/node-extra-packages:release-cli](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli/images/sha256-768579b388caed875a7c0fa20b932be373bbd456e24d78beccb2a7cc2c43a02d?context=explore)
+- [casaper/node-extra-packages:release-cli-latest](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli-latest/images/sha256-768579b388caed875a7c0fa20b932be373bbd456e24d78beccb2a7cc2c43a02d?context=explore)

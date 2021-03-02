@@ -26,6 +26,11 @@
 #   --build-arg 'from_tag=fermium'
 
 ./scripts/build-image.sh --push --readme \
+  --df=release-cli \
+  --tag='release-cli' \
+  --suffix='latest'
+
+./scripts/build-image.sh --push --readme \
   --df=cypress \
   --tag='fermium-cypress' \
   --suffix='latest 5.6.0' \

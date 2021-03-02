@@ -1,0 +1,8 @@
+FROM registry.gitlab.com/gitlab-org/release-cli:latest AS release-cli
+FROM openshift/origin-cli:v3.10 AS openshift-cli
+FROM frolvlad/alpine-glibc
+
+COPY --from=release-cli /usr/local/bin/release-cli /usr/local/bin/release-cli
+COPY --from=openshift-cli /usr/bin/oc /usr/local/bin/oc
+
+LABEL description="Combination of GitHub's release-cli and OpenShift's oc tools"
