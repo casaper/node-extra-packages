@@ -78,5 +78,5 @@
 
 ### Release CLI
 
-- [casaper/node-extra-packages:release-cli](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli/images/sha256-768579b388caed875a7c0fa20b932be373bbd456e24d78beccb2a7cc2c43a02d?context=explore)
-- [casaper/node-extra-packages:release-cli-latest](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli-latest/images/sha256-768579b388caed875a7c0fa20b932be373bbd456e24d78beccb2a7cc2c43a02d?context=explore)
+- [casaper/node-extra-packages:release-cli](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli/images/sha256-4aaeb8eedb93e8eefe1022943c5b8a369b672c3664e31c23c725cc67f4582fac?context=explore)
+- [casaper/node-extra-packages:release-cli-latest](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli-latest/images/sha256-4aaeb8eedb93e8eefe1022943c5b8a369b672c3664e31c23c725cc67f4582fac?context=explore)
