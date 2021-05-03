@@ -15,13 +15,13 @@
 
 ### Fermium (Node 14.x)
 
-- [casaper/node-extra-packages:fermium](https://hub.docker.com/layers/casaper/node-extra-packages/fermium/images/sha256-23500f36a4ff0100d8afb089950374e38fb950a8c564abd8954840505e4af2af?context=explore)
+- [casaper/node-extra-packages:fermium](https://hub.docker.com/layers/casaper/node-extra-packages/fermium/images/sha256-018a21be7d6ddf772ae443c4b768c63e6eaac043c8c38216de4ed9561a2d00fd?context=explore)
 
 #### Angular CLI
 
-- [casaper/node-extra-packages:fermium-ng](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng/images/sha256-e0dc3c9840ba803d7b3b3740325801032ed18affee300509b33c98a83215e71e?context=explore)
-- [casaper/node-extra-packages:fermium-ng-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng-latest/images/sha256-e0dc3c9840ba803d7b3b3740325801032ed18affee300509b33c98a83215e71e?context=explore)
-- [casaper/node-extra-packages:fermium-ng-11.2.10](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng-11.2.10/images/sha256-e0dc3c9840ba803d7b3b3740325801032ed18affee300509b33c98a83215e71e?context=explore)
+- [casaper/node-extra-packages:fermium-ng](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng/images/sha256-9526f8e12253a21819c038a6d76606868658e85ca2c9123fc82a3df2f58fed0d?context=explore)
+- [casaper/node-extra-packages:fermium-ng-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng-latest/images/sha256-9526f8e12253a21819c038a6d76606868658e85ca2c9123fc82a3df2f58fed0d?context=explore)
+- [casaper/node-extra-packages:fermium-ng-11.2.10](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng-11.2.10/images/sha256-9526f8e12253a21819c038a6d76606868658e85ca2c9123fc82a3df2f58fed0d?context=explore)
 - [casaper/node-extra-packages:fermium-ng-11.2.8](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng-11.2.8/images/sha256-9b3ec5d0937ba825c497c7f16ef1c51e8eeebfcf4284a5761b4142740ac2a7db?context=explore)
 - [casaper/node-extra-packages:fermium-ng-11.0.2](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng-11.0.2/images/sha256-d0666f2c200b6931c6236617894cf3a6cb5432600cc98813e5be7e079a4523d4?context=explore)
 - [casaper/node-extra-packages:fermium-ng-10.2.0](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-ng-10.2.0/images/sha256-a3a341d6555c9e3eb2b3c12600731b3d7cd2f36317b637f7de5df88a9fa37608?context=explore)
@@ -29,21 +29,22 @@
 
 #### Express
 
-- [casaper/node-extra-packages:fermium-express](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-express/images/sha256-d31bb447acc59ff9ef88dfc68543a0504c51be5274c831392c9956f102d8da18?context=explore)
+- [casaper/node-extra-packages:fermium-express](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-express/images/sha256-855524a153b5b0e28eef57751cb718eccefe15bc5564667db561979c4669d8e8?context=explore)
 
 #### Chrome
 
-- [casaper/node-extra-packages:fermium-chrome](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome/images/sha256-06758b3195ca1c819fad98ad857b92d102a59ae69616b2902fb869662c7341db?context=explore)
-- [casaper/node-extra-packages:fermium-chrome-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-latest/images/sha256-06758b3195ca1c819fad98ad857b92d102a59ae69616b2902fb869662c7341db?context=explore)
-- [casaper/node-extra-packages:fermium-chrome-90](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-90/images/sha256-06758b3195ca1c819fad98ad857b92d102a59ae69616b2902fb869662c7341db?context=explore)
+- [casaper/node-extra-packages:fermium-chrome](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome/images/sha256-77ad2e33b592112c2d807cad06292533b9248c67d75d49a3c0c9bb03cdd0d03a?context=explore)
+- [casaper/node-extra-packages:fermium-chrome-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-latest/images/sha256-77ad2e33b592112c2d807cad06292533b9248c67d75d49a3c0c9bb03cdd0d03a?context=explore)
+- [casaper/node-extra-packages:fermium-chrome-90](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-90/images/sha256-77ad2e33b592112c2d807cad06292533b9248c67d75d49a3c0c9bb03cdd0d03a?context=explore)
 - [casaper/node-extra-packages:fermium-chrome-87](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-87/images/sha256-e20fa8437b551fd0e510f71ebaa41e49ed77e9924ec8ec5f08e1f916f09bf820?context=explore)
 - [casaper/node-extra-packages:fermium-chrome-86](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-86/images/sha256-b4da924cbfb6a0f5758e7e3a885e08b631c692703b33bf6df5eda3dd8c36ad37?context=explore)
 
 #### Chrome and Angular CLI
 
-- [casaper/node-extra-packages:fermium-chrome-ng](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng/images/sha256-6d790ed1744a6282469baa2db9b298dc51399e49bd5bb807620da026c79b94c9?context=explore)
-- [casaper/node-extra-packages:fermium-chrome-ng-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng-latest/images/sha256-6d790ed1744a6282469baa2db9b298dc51399e49bd5bb807620da026c79b94c9?context=explore)
-- [casaper/node-extra-packages:fermium-chrome-ng-11.2.10](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng-11.2.10/images/sha256-6d790ed1744a6282469baa2db9b298dc51399e49bd5bb807620da026c79b94c9?context=explore)
+
+- [casaper/node-extra-packages:fermium-chrome-ng](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng/images/sha256-2d9cc3aee7f73b75895afc88cd052dc224915d19a9dbb2cc94f6920bc2b8dbbd?context=explore)
+- [casaper/node-extra-packages:fermium-chrome-ng-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng-latest/images/sha256-2d9cc3aee7f73b75895afc88cd052dc224915d19a9dbb2cc94f6920bc2b8dbbd?context=explore)
+- [casaper/node-extra-packages:fermium-chrome-ng-11.2.10](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng-11.2.10/images/sha256-2d9cc3aee7f73b75895afc88cd052dc224915d19a9dbb2cc94f6920bc2b8dbbd?context=explore)
 - [casaper/node-extra-packages:fermium-chrome-ng-11.2.8](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng-11.2.8/images/sha256-4e48937b0d88307d1f385a0b9c5fdc6b0829d1c3bd8842dd78994f664629f674?context=explore)
 - [casaper/node-extra-packages:fermium-chrome-ng-11.0.2](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng-11.0.2/images/sha256-5baa116f8f7b61c9a4233f6a75db858bef7eb5d57f5a1f25a687b00bfdfe8ab8?context=explore)
 - [casaper/node-extra-packages:fermium-chrome-ng-10.1.1](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-chrome-ng-10.1.1/images/sha256-1609018a86c4d4f0baa857d0945c9f454a665d4eb19f42b397d43c824f24ff2e?context=explore)
@@ -51,24 +52,25 @@
 
 #### Cypress installed
 
-- [casaper/node-extra-packages:fermium-cypress](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress/images/sha256-5fe6d1dbca99ec519a44d664ad5b588a6e870b7bb820dfb4e4f7facc24272230?context=explore)
-- [casaper/node-extra-packages:fermium-cypress-7.1.0](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-7.1.0/images/sha256-5fe6d1dbca99ec519a44d664ad5b588a6e870b7bb820dfb4e4f7facc24272230?context=explore)
-- [casaper/node-extra-packages:fermium-cypress-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-latest/images/sha256-5fe6d1dbca99ec519a44d664ad5b588a6e870b7bb820dfb4e4f7facc24272230?context=explore)
-- [casaper/node-extra-packages:fermium-cypress-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-latest/images/sha256-2f284b5e59f1f7b9f872167cd681badff3fd2b248d12891b06a81f2ccccac6fa?context=explore)
+
+- [casaper/node-extra-packages:fermium-cypress](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress/images/sha256-7a1214481ca2276669b65a47fe02d904867d52cc5c392c7efa4a0be4c85975a8?context=explore)
+- [casaper/node-extra-packages:fermium-cypress-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-latest/images/sha256-7a1214481ca2276669b65a47fe02d904867d52cc5c392c7efa4a0be4c85975a8?context=explore)
+- [casaper/node-extra-packages:fermium-cypress-7.1.0](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-7.1.0/images/sha256-7a1214481ca2276669b65a47fe02d904867d52cc5c392c7efa4a0be4c85975a8?context=explore)
 - [casaper/node-extra-packages:fermium-cypress-5.5.0](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-5.5.0/images/sha256-bc4fe42934aa09869777cf38a6a2b5bdb6dc696138d75cebda2b54cd24646013?context=explore)
 
 #### Cyperess and Angular CLI
 
-- [casaper/node-extra-packages:fermium-cypress-ng](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng/images/sha256-80a08f40339858d259a9083b6258c89bf51ca7503d3e671849dded07ba841836?context=explore)
-- [casaper/node-extra-packages:fermium-cypress-ng-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng-latest/images/sha256-80a08f40339858d259a9083b6258c89bf51ca7503d3e671849dded07ba841836?context=explore)
-- [casaper/node-extra-packages:fermium-cypress-ng-11.2.10](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng-11.2.10/images/sha256-80a08f40339858d259a9083b6258c89bf51ca7503d3e671849dded07ba841836?context=explore)
+
+- [casaper/node-extra-packages:fermium-cypress-ng](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng/images/sha256-7f1140879575a81767ff1f25ef764ef9ffabff98b3a314934856a97ce1efb751?context=explore)
+- [casaper/node-extra-packages:fermium-cypress-ng-latest](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng-latest/images/sha256-7f1140879575a81767ff1f25ef764ef9ffabff98b3a314934856a97ce1efb751?context=explore)
+- [casaper/node-extra-packages:fermium-cypress-ng-11.2.10](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng-11.2.10/images/sha256-7f1140879575a81767ff1f25ef764ef9ffabff98b3a314934856a97ce1efb751?context=explore)
 - [casaper/node-extra-packages:fermium-cypress-ng-11.2.8](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng-11.2.8/images/sha256-fb9e98f30bcf7f726769181b1fe7b820f41fce7e6b7cb4a9ec00b8caedde59f2?context=explore)
 - [casaper/node-extra-packages:fermium-cypress-ng-11.0.2](https://hub.docker.com/layers/casaper/node-extra-packages/fermium-cypress-ng-11.0.2/images/sha256-0ee08857d702bc8b8ef6516758e91d3e4cd63403cdb78a613b3feccbe0fa6b28?context=explore)
 
 ### Release CLI
 
-- [casaper/node-extra-packages:release-cli](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli/images/sha256-f1ffcb146808ce1baa58e1a1ca4e09311450db45e98385c73299292fa83d195c?context=explore)
-- [casaper/node-extra-packages:release-cli-latest](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli-latest/images/sha256-f1ffcb146808ce1baa58e1a1ca4e09311450db45e98385c73299292fa83d195c?context=explore)
+- [casaper/node-extra-packages:release-cli](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli/images/sha256-f909f3e88b64be8b4831fea7d7a2d28bdad30ce8bf621eec081112476a7f93c9?context=explore)
+- [casaper/node-extra-packages:release-cli-latest](https://hub.docker.com/layers/casaper/node-extra-packages/release-cli-latest/images/sha256-f909f3e88b64be8b4831fea7d7a2d28bdad30ce8bf621eec081112476a7f93c9?context=explore)
 
 ### Erbium (Node 12.x)
 

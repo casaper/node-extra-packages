@@ -30,6 +30,7 @@ RUN apt-get update \
                 unzip \
                 $(echo "$extra_packages" | tr ';' "\n") \
   && set -xe \
+  && npm install -g npm@latest \
   && mkdir -p "$app_directory" \
   && chown node:node "$app_directory" \
   && chmod a+rw "$app_directory" \
