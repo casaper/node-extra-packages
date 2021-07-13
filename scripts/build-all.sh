@@ -16,14 +16,8 @@
 ./scripts/build-image.sh --push --readme \
   --df=chrome \
   --tag='fermium-chrome' \
-  --suffix='90 latest' \
+  --suffix='91 latest' \
   --build-arg 'from_tag=fermium'
-
-# ./scripts/build-image.sh --push --readme \
-#   --df=cypress \
-#   --tag='fermium-cypress-5.5.0' \
-#   --build-arg 'cypress_version=5.5.0' \
-#   --build-arg 'from_tag=fermium'
 
 ./scripts/build-image.sh --push --readme \
   --df=release-cli \
@@ -33,82 +27,52 @@
 ./scripts/build-image.sh --push --readme \
   --df=cypress \
   --tag='fermium-cypress' \
-  --suffix='latest 7.3.0' \
-  --build-arg 'cypress_version=7.3.0' \
+  --suffix='latest 7.7.0' \
+  --build-arg 'cypress_version=7.7.0' \
   --build-arg 'from_tag=fermium'
 
-## angular 10.1.1
-#
-
-# ./scripts/build-image.sh \
-#   --df=ng \
-#   --tag=erbium-ng-10.1.1  \
-#   --build-arg 'angular_cli_version=10.1.1' \
-#   --build-arg 'from_tag=erbium'
-
-# ./scripts/build-image.sh \
-#   --df=ng \
-#   --tag='erbium-chrome-ng-10.1.1' \
-#   --build-arg 'angular_cli_version=10.1.1' \
-#   --build-arg 'from_tag=erbium-chrome'
-
-
-## Angular 11.2.8
+## Angular 11.2.14
 #
 ./scripts/build-image.sh --push --readme \
   --df=ng \
   --tag=fermium-ng  \
-  --suffix='11.2.12 latest' \
-  --build-arg 'angular_cli_version=11.2.12' \
+  --suffix='11.2.14 latest' \
+  --build-arg 'angular_cli_version=11.2.14' \
   --build-arg 'from_tag=fermium'
 
 ./scripts/build-image.sh --push --readme \
   --df=ng \
   --tag='fermium-chrome-ng' \
-  --suffix='11.2.12 latest' \
-  --build-arg 'angular_cli_version=11.2.12' \
+  --suffix='11.2.14 latest' \
+  --build-arg 'angular_cli_version=11.2.14' \
   --build-arg 'from_tag=fermium-chrome'
 
 ./scripts/build-image.sh --push --readme \
   --df=ng \
   --tag=fermium-cypress-ng \
-  --suffix='11.2.12 latest' \
-  --build-arg 'angular_cli_version=11.2.12' \
+  --suffix='11.2.14 latest' \
+  --build-arg 'angular_cli_version=11.2.14' \
   --build-arg 'from_tag=fermium-cypress'
 
-## Angular 10.1.1
+## Angular 12.1.1
 #
-# ./scripts/build-image.sh \
-#   --df=ng \
-#   --tag=fermium-ng-10.1.1  \
-#   --build-arg 'angular_cli_version=10.1.1' \
-#   --build-arg 'from_tag=fermium'
+./scripts/build-image.sh --push --readme \
+  --df=ng \
+  --tag=fermium-ng  \
+  --suffix='12.1.1 latest' \
+  --build-arg 'angular_cli_version=12.1.1' \
+  --build-arg 'from_tag=fermium'
 
-# ./scripts/build-image.sh \
-#   --df=ng \
-#   --tag='fermium-chrome-ng-10.1.1' \
-#   --build-arg 'angular_cli_version=10.1.1' \
-#   --build-arg 'from_tag=fermium-chrome'
+./scripts/build-image.sh --push --readme \
+  --df=ng \
+  --tag='fermium-chrome-ng' \
+  --suffix='12.1.1 latest' \
+  --build-arg 'angular_cli_version=12.1.1' \
+  --build-arg 'from_tag=fermium-chrome'
 
-## angular 10.2.0
-#
-# ./scripts/build-image.sh \
-#   --df=ng \
-#   --tag=fermium-ng \
-#   --suffix='10.2.0 latest' \
-#   --build-arg 'angular_cli_version=10.2.0' \
-#   --build-arg 'from_tag=fermium'
-
-# ./scripts/build-image.sh \
-#   --df=ng \
-#   --tag=fermium-chrome-ng \
-#   --suffix='10.2.0 latest' \
-#   --build-arg 'angular_cli_version=10.2.0' \
-#   --build-arg 'from_tag=fermium-chrome'
-
-# ./scripts/build-image.sh \
-#   --df=ng \
-#   --tag=fermium-cypress-ng \
-#   --suffix='10.2.0 latest' \
-#   --build-arg 'angular_cli_version=10.2.0' \
-#   --build-arg 'from_tag=fermium-cypress'
+./scripts/build-image.sh --push --readme \
+  --df=ng \
+  --tag=fermium-cypress-ng \
+  --suffix='12.1.1 latest' \
+  --build-arg 'angular_cli_version=12.1.1' \
+  --build-arg 'from_tag=fermium-cypress'

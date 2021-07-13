@@ -96,7 +96,8 @@ for alias_tag in ${PRODUCED_TAGS}; do
     docker push "${alias_tag}"
   fi
   if [ "$APPEND_README" = 'true' ]; then
-    img_link "${alias_tag}" >> README.md
+    add_readme_link_and_csv_row "${alias_tag}"
+    # img_link "${alias_tag}" >> README.md
   fi
 done
 

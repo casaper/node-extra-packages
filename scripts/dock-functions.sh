@@ -76,6 +76,29 @@ function img_link() {
   echo "- [${REPO_NAME}:${TAG}](${IMG_URL})"
 }
 
+function add_readme_link_and_csv_row() {
+  REFERENCE="${1}"
+  TAG_ID=$(docker image ls ${REFERENCE} --format "table {{.Tag}};{{.ID}}" | tail -n +2)
+  TAG=$(cut -d ';' -f 1 <<< "$TAG_ID")
+  ID=$(cut -d ';' -f 2 <<< "$TAG_ID")
+  REPO_DIGESTS=$(docker image inspect "$ID" --format '{{.RepoDigests}}' | cut -d '[' -f 2 | cut -d ']' -f 1)
+  REPO_DIGEST=$(echo "$REPO_DIGESTS" | cut -d ' ' -f 1)
+  DIGEST_SHA=$(echo "$REPO_DIGEST" | cut -d ':' -f 2)
+  IMG_URL="https://hub.docker.com/layers/${REPO_NAME}/${TAG}/images/sha256-${DIGEST_SHA}?context=explore"
+  if grep "${TAG}," image_data.csv &>/dev/null; then
+    cat image_data.csv | grep --invert-match "${TAG}," > image_data.csv
+  fi
+  if ! grep "$IMG_URL" image_data.csv &>/dev/null; then
+    echo "${TAG},${DIGEST_SHA},${IMG_URL}" >> image_data.csv
+  fi
+  if grep "\[${REPO_NAME}:${TAG}\]" README.md &>/dev/null; then
+    cat README.md | grep --invert-match "\[${REPO_NAME}:${TAG}\]" > README.md
+  fi
+  if ! grep "$IMG_URL" README.md &>/dev/null; then
+    echo "- [${REPO_NAME}:${TAG}](${IMG_URL})" >> README.md
+  fi
+}
+
 function all_links() {
   DOK_FORMAT='table {{.Tag}};{{.ID}}'
   MD_LIST=''
